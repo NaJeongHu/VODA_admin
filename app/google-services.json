@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "94061416074",
+    "firebase_url": "https://voda-handy-default-rtdb.firebaseio.com",
+    "project_id": "voda-handy",
+    "storage_bucket": "voda-handy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94061416074:android:90b22c5f53f43500e4a773",
+        "android_client_info": {
+          "package_name": "com.voda.voda_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94061416074-nrf5ovfpl0ssh7pgik6h98i6gb3vpk15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdYVS4Q5dk78BQ6ffKYIoD_tPpCFou5oU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94061416074-nrf5ovfpl0ssh7pgik6h98i6gb3vpk15.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
