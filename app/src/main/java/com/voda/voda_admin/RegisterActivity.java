@@ -72,6 +72,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         if (task.isSuccessful()) {
                             FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
                             UserAccount account = new UserAccount();
+                            StoreAccount storeAccount = new StoreAccount();
                             account.setIdToken(firebaseUser.getUid());
                             account.setEmailId(firebaseUser.getEmail());
                             account.setPassword(strPassword);
@@ -83,9 +84,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             account.setBusinessnum(strBusinessNum);
                             account.setCategory(strCategory);
 
+                            storeAccount.setName(strStoreName);
                             // setValue : database에 insert 행위위
                            mDatabaseRef.child("UserAccount").child("admin").child(firebaseUser.getUid()).setValue(account);
-
+                           mDatabaseRef.child("Store").child(strCategory).child(firebaseUser.getUid()).setValue(storeAccount);
                             Toast.makeText(RegisterActivity.this,"회원가입 성공",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent);
