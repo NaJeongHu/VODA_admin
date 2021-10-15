@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VODA_admin">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AnalysisActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CustomerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OpenActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity2"
             android:exported="true" />
         <activity

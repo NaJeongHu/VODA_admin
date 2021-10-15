@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_agree.xml" value="0.180859375" />
+        <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_analysis.xml" value="0.180859375" />
+        <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_customer.xml" value="0.169921875" />
         <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_findpassword.xml" value="0.147265625" />
         <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_login.xml" value="0.13125" />
         <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_main.xml" value="0.16799999999999998" />
-        <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_main2.xml" value="0.1390625" />
+        <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_main2.xml" value="0.176" />
+        <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_menu.xml" value="0.180859375" />
+        <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_open.xml" value="0.180859375" />
         <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/SeJin/AndroidStudioProjects/VODA_admin/app/src/main/res/layout/activity_settings.xml" value="0.180859375" />
       </map>
     </option>
   </component>
