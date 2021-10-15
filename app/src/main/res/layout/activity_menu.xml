@@ -5,11 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    tools:context=".MenuActivity"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="100dp"
-        android:text="탭 2번 입니다"/>
+        android:text="메뉴등록"/>
+
+    <Button
+        android:id="@+id/btn_menu_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메뉴 추가하기"
+        android:textSize="50dp"/>
 </LinearLayout>

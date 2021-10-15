@@ -33,35 +33,40 @@
                     android:layout_width="fill_parent"
                     android:layout_height="0dip"
                     android:layout_weight="1.0"
-                    android:text="Tab1" />
+                    android:onClick="tabHandler"
+                    android:text="영업개시" />
 
                 <Button
                     android:id="@+id/Tab2"
                     android:layout_width="fill_parent"
                     android:layout_height="0dip"
                     android:layout_weight="1.0"
-                    android:text="Tab2" />
+                    android:onClick="tabHandler"
+                    android:text="메뉴관리" />
 
                 <Button
                     android:id="@+id/Tab3"
                     android:layout_width="fill_parent"
                     android:layout_height="0dip"
                     android:layout_weight="1.0"
-                    android:text="Tab3" />
+                    android:onClick="tabHandler"
+                    android:text="고객관리" />
 
                 <Button
                     android:id="@+id/Tab4"
                     android:layout_width="fill_parent"
                     android:layout_height="0dip"
                     android:layout_weight="1.0"
-                    android:text="Tab4" />
+                    android:onClick="tabHandler"
+                    android:text="주문통계" />
 
                 <Button
                     android:id="@+id/Tab5"
                     android:layout_width="fill_parent"
                     android:layout_height="0dip"
                     android:layout_weight="1.0"
-                    android:text="Tab5" />
+                    android:onClick="tabHandler"
+                    android:text="설정" />
 
             </LinearLayout>
 
