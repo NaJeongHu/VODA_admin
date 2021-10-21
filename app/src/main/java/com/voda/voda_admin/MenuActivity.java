@@ -3,14 +3,13 @@ package com.voda.voda_admin;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,14 +23,18 @@ public class MenuActivity extends AppCompatActivity {
 
     private FirebaseAuth mFirebaseAuth;     // 파이어베이스 인증
     private DatabaseReference mDatabaseRef; // 실시간 데이터베이스
-    Button btn_menu_plus;
-    String mycategory;
+
+    private RecyclerView recycle_menu;
+    private Button btn_menu_plus;
+
+    private String mycategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        recycle_menu = findViewById(R.id.recycle_menu);
         btn_menu_plus = findViewById(R.id.btn_menu_plus);
         btn_menu_plus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +51,7 @@ public class MenuActivity extends AppCompatActivity {
         EditText edit_menu_name, edit_menu_category, edit_menu_text, edit_menu_text_addition;
         Button btn_menu_register;
 
-        View dialogView = getLayoutInflater().inflate(R.layout.menuplusdialog, null);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_menu_addition, null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
         builder.setView(dialogView);
