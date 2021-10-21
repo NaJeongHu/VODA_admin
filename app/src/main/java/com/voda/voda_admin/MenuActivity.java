@@ -48,7 +48,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void menu_dialog(View v) {
-        EditText edit_menu_name, edit_menu_category, edit_menu_text, edit_menu_text_addition;
+        EditText edit_menu_name, edit_menu_category, edit_menu_explanation, edit_menu_tag, edit_menu_price;
         Button btn_menu_register;
 
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_menu_addition, null);
@@ -62,9 +62,10 @@ public class MenuActivity extends AppCompatActivity {
 
         edit_menu_name = dialogView.findViewById(R.id.edit_menu_name);
         edit_menu_category = dialogView.findViewById(R.id.edit_menu_category);
-        edit_menu_text = dialogView.findViewById(R.id.edit_menu_text);
-        edit_menu_text_addition = dialogView.findViewById(R.id.edit_menu_text_addition);
+        edit_menu_explanation = dialogView.findViewById(R.id.edit_menu_explanation);
+        edit_menu_tag = dialogView.findViewById(R.id.edit_menu_tag);
         btn_menu_register = dialogView.findViewById(R.id.btn_menu_register);
+        edit_menu_price = dialogView.findViewById(R.id.edit_menu_price);
 
         btn_menu_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,14 +73,16 @@ public class MenuActivity extends AppCompatActivity {
                 alertDialog.dismiss();
                 String name = edit_menu_name.getText().toString();
                 String category = edit_menu_category.getText().toString();
-                String text = edit_menu_text.getText().toString();
-                String text_addition = edit_menu_text_addition.getText().toString();
+                String explanation = edit_menu_explanation.getText().toString();
+                String tag = edit_menu_tag.getText().toString();
+                Integer price = Integer.parseInt(edit_menu_price.getText().toString());
 
                 Menu menu = new Menu();
                 menu.setName(name);
                 menu.setCategory(category);
-                menu.setText(text);
-                menu.setText_addition(text_addition);
+                menu.setExplanation(explanation);
+                menu.setTag(tag);
+                menu.setPrice(price);
 
                 FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
                 mDatabaseRef.child("UserAccount").child("admin").child(firebaseUser.getUid()).child("category").addListenerForSingleValueEvent(new ValueEventListener() {
