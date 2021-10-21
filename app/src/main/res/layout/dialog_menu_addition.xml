@@ -42,10 +42,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="가격"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="사진등록"/>
+        <ImageView
+            android:id="@+id/iv_menu_picture"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icon_camera"/>
 
     </LinearLayout>
 

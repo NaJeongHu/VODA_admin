@@ -58,7 +58,7 @@
                 android:text="메뉴이름"/>
 
             <TextView
-                android:id="@+id/item_menu_text_addition"
+                android:id="@+id/item_menu_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -89,7 +89,7 @@
         android:layout_weight="4">
 
         <TextView
-            android:id="@+id/item_menu_text"
+            android:id="@+id/item_menu_explanation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="너무 맛있고 뜨끈한 국밥 너무 맛있고 뜨끈한 국밥 너무 맛있고 뜨끈한 국밥"

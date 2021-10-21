@@ -7,6 +7,7 @@ public class Menu {
     private String explanation;
     private String tag;
     private Integer price;
+    private String imageurl;
 
     public Menu(){ }
 
@@ -29,4 +30,12 @@ public class Menu {
     public Integer getPrice() { return price; }
 
     public void setPrice(Integer price) { this.price = price; }
+
+    public String getImageurl() {
+        return imageurl;
+    }
+
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
+    }
 }
