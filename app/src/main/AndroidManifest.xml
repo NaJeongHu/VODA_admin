@@ -10,38 +10,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VODA_admin">
         <activity
-            android:name=".SettingsActivity"
+            android:name=".Activity.SettingsActivity"
             android:exported="true" />
         <activity
-            android:name=".AnalysisActivity"
+            android:name=".Activity.AnalysisActivity"
             android:exported="true" />
         <activity
-            android:name=".CustomerActivity"
+            android:name=".Activity.CustomerActivity"
             android:exported="true" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".Activity.MenuActivity"
             android:exported="true" />
         <activity
-            android:name=".OpenActivity"
+            android:name=".Activity.OpenActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".Activity.MainActivity2"
             android:exported="true" />
         <activity
-            android:name=".AgreeActivity"
+            android:name=".Activity.AgreeActivity"
             android:exported="true" />
         <activity
-            android:name=".FindpasswordActivity"
+            android:name=".Activity.FindpasswordActivity"
             android:exported="true" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Activity.MainActivity" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

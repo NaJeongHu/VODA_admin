@@ -1,6 +1,4 @@
-package com.voda.voda_admin;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.voda.voda_admin.Activity;
 
 import android.os.Bundle;
 import android.app.TabActivity;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
+
+import com.voda.voda_admin.R;
 
 public class MainActivity2 extends TabActivity {
     /**

@@ -1,14 +1,16 @@
-package com.voda.voda_admin;
+package com.voda.voda_admin.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class SettingsActivity extends AppCompatActivity {
+import com.voda.voda_admin.R;
+
+public class AnalysisActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_analysis);
     }
 }

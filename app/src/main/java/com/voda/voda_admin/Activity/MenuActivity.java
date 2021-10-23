@@ -1,4 +1,4 @@
-package com.voda.voda_admin;
+package com.voda.voda_admin.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +34,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
+import com.voda.voda_admin.Adapter.RecyclerViewAdapter_Menu;
+import com.voda.voda_admin.Model.Menu;
+import com.voda.voda_admin.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -90,6 +93,7 @@ public class MenuActivity extends AppCompatActivity {
         firebaseUser = mFirebaseAuth.getCurrentUser();
 
         recycle_menu = findViewById(R.id.recycle_menu);
+        recycle_menu.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recycle_menu.setLayoutManager(layoutManager);
 
@@ -100,6 +104,8 @@ public class MenuActivity extends AppCompatActivity {
                 menu_dialog(v);
             }
         });
+        adapter = new RecyclerViewAdapter_Menu(arr, getApplicationContext());
+        recycle_menu.setAdapter(adapter);
     }
 
     private void getDataFromServer() {
@@ -116,11 +122,8 @@ public class MenuActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot datasnapshot) {
                         for (DataSnapshot snapshot : datasnapshot.getChildren()) {
-                            String menuname = snapshot.getKey();
                             Menu menu1 = snapshot.getValue(Menu.class);
-                            if (menu1.getExplanation() != null) {
-                                arr.add(menu1);
-                            }
+                            arr.add(menu1);
                         }
                         adapter.notifyDataSetChanged();
                     }
@@ -137,9 +140,6 @@ public class MenuActivity extends AppCompatActivity {
                 Log.d("파이어베이스", "데이터 가져오기 실패");
             }
         });
-
-        adapter = new RecyclerViewAdapter_Menu(arr, getApplicationContext());
-        recycle_menu.setAdapter(adapter);
     }
 
     public void menu_dialog(View v) {
@@ -149,8 +149,11 @@ public class MenuActivity extends AppCompatActivity {
         builder.setView(dialogView);
 
         final AlertDialog alertDialog = builder.create();
-        alertDialog.getWindow().setBackgroundDrawableResource(android.R.color.white);
         alertDialog.show();
+        WindowManager.LayoutParams params = alertDialog.getWindow().getAttributes();
+        params.width = 2400;
+        alertDialog.getWindow().setAttributes(params);
+        alertDialog.getWindow().setBackgroundDrawableResource(android.R.color.white);
 
         edit_menu_name = dialogView.findViewById(R.id.edit_menu_name);
         edit_menu_category = dialogView.findViewById(R.id.edit_menu_category);
@@ -221,8 +224,7 @@ public class MenuActivity extends AppCompatActivity {
                     HashMap<String, Object> map = new HashMap<>();
                     map.put("imageurl", mUri);
 
-                    mDatabaseRef.child("Store").child(mycategory).child(firebaseUser.getUid()).child("MenuInfo").child(name);
-                    mDatabaseRef.updateChildren(map);
+                    mDatabaseRef.child("Store").child(mycategory).child(firebaseUser.getUid()).child("MenuInfo").child(name).updateChildren(map);
                 } else {
                     Toast.makeText(MenuActivity.this, "Failed!", Toast.LENGTH_SHORT).show();
                 }

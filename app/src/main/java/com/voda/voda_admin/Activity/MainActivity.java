@@ -1,4 +1,4 @@
-package com.voda.voda_admin;
+package com.voda.voda_admin.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import com.voda.voda_admin.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init(){
+
         card_open = findViewById(R.id.card_open);
         card_menu = findViewById(R.id.card_menu);
         card_customer = findViewById(R.id.card_customer);

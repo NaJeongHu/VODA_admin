@@ -1,4 +1,4 @@
-package com.voda.voda_admin;
+package com.voda.voda_admin.Model;
 
 public class UserAccount {
 

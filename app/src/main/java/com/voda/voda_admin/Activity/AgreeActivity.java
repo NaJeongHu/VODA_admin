@@ -1,4 +1,4 @@
-package com.voda.voda_admin;
+package com.voda.voda_admin.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.voda.voda_admin.R;
 
 public class AgreeActivity extends AppCompatActivity implements View.OnClickListener{
 

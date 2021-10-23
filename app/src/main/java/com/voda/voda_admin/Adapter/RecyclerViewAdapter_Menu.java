@@ -1,17 +1,21 @@
-package com.voda.voda_admin;
+package com.voda.voda_admin.Adapter;
 
 import android.content.Context;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.voda.voda_admin.Activity.MenuActivity;
+import com.voda.voda_admin.Model.Menu;
+import com.voda.voda_admin.R;
 
 import java.util.ArrayList;
 
@@ -22,10 +26,9 @@ public class RecyclerViewAdapter_Menu extends RecyclerView.Adapter<RecyclerViewA
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView tv_category,tv_name,tv_tag,tv_explanation;
-        private ImageView iv_picture;
-        private ImageButton ib_settings;
-        private ToggleButton tb_sold_out;
+        private TextView tv_category,tv_name,tv_tag,tv_explanation,tv_price;
+        private ImageView iv_picture,iv_settings;
+        private Switch switch_sold_out;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -33,18 +36,19 @@ public class RecyclerViewAdapter_Menu extends RecyclerView.Adapter<RecyclerViewA
             this.tv_name = itemView.findViewById(R.id.item_menu_name);
             this.tv_tag = itemView.findViewById(R.id.item_menu_tag);
             this.tv_explanation = itemView.findViewById(R.id.item_menu_explanation);
+            this.tv_price = itemView.findViewById(R.id.item_menu_price);
             this.iv_picture = itemView.findViewById(R.id.item_menu_picture);
-            this.ib_settings = itemView.findViewById(R.id.item_menu_settings);
-            this.tb_sold_out = itemView.findViewById(R.id.item_menu_toggle);
+            this.iv_settings = itemView.findViewById(R.id.item_menu_settings);
+            this.switch_sold_out = itemView.findViewById(R.id.item_menu_soldout);
 
-            this.tb_sold_out.setOnClickListener(new View.OnClickListener() {
+            this.switch_sold_out.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    //TODO 품절표시 처리
                 }
             });
 
-            this.ib_settings.setOnClickListener(new View.OnClickListener() {
+            this.iv_settings.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -70,15 +74,17 @@ public class RecyclerViewAdapter_Menu extends RecyclerView.Adapter<RecyclerViewA
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        if (mList.isEmpty()){
-            Menu menu = new Menu();
-            menu = mList.get(position);
+        if (!mList.isEmpty()){
+            Menu menu = mList.get(position);
             if(menu!=null){
                 holder.tv_name.setText(menu.getName());
                 holder.tv_category.setText(menu.getCategory());
                 holder.tv_explanation.setText(menu.getExplanation());
+                holder.tv_price.setText(menu.getPrice()+"원");
                 holder.tv_tag.setText(menu.getTag());
-                holder.iv_picture.setImageURI(Uri.parse(menu.getImageurl()));
+                if(menu.getImageurl()!=null) {
+                    Glide.with(holder.itemView.getContext()).load(menu.getImageurl()).into(holder.iv_picture);
+                }
             }
         }
     }
