@@ -22,7 +22,7 @@
             android:name=".Activity.MenuActivity"
             android:exported="true" />
         <activity
-            android:name=".Activity.OpenActivity"
+            android:name=".Activity.OrderActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.MainActivity2"

@@ -31,7 +31,7 @@ import com.voda.voda_admin.R;
 
 import java.util.ArrayList;
 
-public class OpenActivity extends AppCompatActivity {
+public class OrderActivity extends AppCompatActivity {
 
     private ArrayAdapter<String> SpinnerAdapter;
 
@@ -93,6 +93,10 @@ public class OpenActivity extends AppCompatActivity {
         recycle_open.setHasFixedSize(true);
         layoutManager = new GridLayoutManager(this,3);
         recycle_open.setLayoutManager(layoutManager);
+        //임시
+        for(int i=0;i<20;i++){
+            arr.add(new Order("포장","2021년 10월 23일 07시 23분","맵지 않게 부탁드려요"));
+        }
         adapter = new RecyclerViewAdapter_Order(arr, getApplicationContext());
         recycle_open.setAdapter(adapter);
     }

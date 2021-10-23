@@ -73,6 +73,11 @@ public class RecyclerViewAdapter_Order extends RecyclerView.Adapter<RecyclerView
             Order order = mList.get(position);
             if(order!=null){
                 //TODO : Order 객체의 child들을 실제 값들과 똑같이 Binding 시키기
+                //임시
+                holder.tv_num.setText("접수번호 "+position+"번");
+                holder.tv_type.setText(order.getType());
+                holder.tv_time.setText(order.getTime());
+                holder.tv_request.setText(order.getRequest());
             }
         }
     }

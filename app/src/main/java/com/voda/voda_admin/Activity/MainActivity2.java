@@ -35,7 +35,7 @@ public class MainActivity2 extends TabActivity {
         TabSpec spec1 = tabHost.newTabSpec("Tab1");
         // setting Title and Icon for the Tab
         spec1.setIndicator("Tab1");
-        Intent Intent1 = new Intent(this, OpenActivity.class);
+        Intent Intent1 = new Intent(this, OrderActivity.class);
         spec1.setContent(Intent1);
 
         // Tab for tab2
