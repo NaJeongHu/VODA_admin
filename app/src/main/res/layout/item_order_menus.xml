@@ -6,12 +6,14 @@
     android:layout_height="wrap_content">
 
     <TextView
+        android:id="@+id/item_order_menus_name"
         android:layout_width="0dp"
         android:layout_weight="4"
         android:text="메뉴"
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:id="@+id/item_order_menus_num"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:text="수량"

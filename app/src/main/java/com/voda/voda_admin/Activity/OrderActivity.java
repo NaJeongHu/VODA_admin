@@ -94,8 +94,12 @@ public class OrderActivity extends AppCompatActivity {
         layoutManager = new GridLayoutManager(this,3);
         recycle_open.setLayoutManager(layoutManager);
         //임시
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("초코김밥:3");
+        arrayList.add("딸기김밥:1");
+        arrayList.add("바나나김밥:20");
         for(int i=0;i<20;i++){
-            arr.add(new Order("포장","2021년 10월 23일 07시 23분","맵지 않게 부탁드려요"));
+            arr.add(new Order("포장","2021년 10월 23일 07:23","맵지 않게 부탁드려요",arrayList));
         }
         adapter = new RecyclerViewAdapter_Order(arr, getApplicationContext());
         recycle_open.setAdapter(adapter);

@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.voda.voda_admin.Model.Order;
@@ -24,7 +25,7 @@ public class RecyclerViewAdapter_Order extends RecyclerView.Adapter<RecyclerView
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tv_num,tv_type,tv_time,tv_request;
-        private ListView list_item_order;
+        private RecyclerView recycle_item_order;
         private ImageView iv_glasses,iv_complete,iv_cancel;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -36,6 +37,8 @@ public class RecyclerViewAdapter_Order extends RecyclerView.Adapter<RecyclerView
             this.iv_glasses = itemView.findViewById(R.id.item_order_glasses);
             this.iv_complete = itemView.findViewById(R.id.item_order_complete);
             this.iv_cancel = itemView.findViewById(R.id.item_order_cancel);
+
+            this.recycle_item_order = itemView.findViewById(R.id.recycle_item_order);
 
             this.iv_complete.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -78,6 +81,9 @@ public class RecyclerViewAdapter_Order extends RecyclerView.Adapter<RecyclerView
                 holder.tv_type.setText(order.getType());
                 holder.tv_time.setText(order.getTime());
                 holder.tv_request.setText(order.getRequest());
+                holder.recycle_item_order.setAdapter(new RecyclerViewAdapter_Order_Menus(order.getMenus(), mContext));
+                holder.recycle_item_order.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
+                holder.recycle_item_order.setHasFixedSize(true);
             }
         }
     }
