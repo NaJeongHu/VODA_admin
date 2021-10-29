@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MenuActivity"
     android:layout_margin="30dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -44,7 +46,6 @@
                 android:hint="메뉴명/카테고리"
                 android:maxLines="1">
 
-                <requestFocus />
             </EditText>
 
         </LinearLayout>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
@@ -22,6 +23,7 @@ public class MainActivity2 extends TabActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         tabHost = getTabHost();
 
@@ -77,7 +79,7 @@ public class MainActivity2 extends TabActivity {
         tabHost.addTab(spec4); // Adding tab4
         tabHost.addTab(spec5); // Adding tab5
 
-
+        tabHost.setCurrentTab(getIntent().getExtras().getInt("num"));
 //
 //        Tab1.setOnClickListener(this);
 //        Tab2.setOnClickListener(this);

@@ -77,11 +77,16 @@ public class RecyclerViewAdapter_Order extends RecyclerView.Adapter<RecyclerView
             if(order!=null){
                 //TODO : Order 객체의 child들을 실제 값들과 똑같이 Binding 시키기
                 //임시
-                holder.tv_num.setText("접수번호 "+position+"번");
+                holder.tv_num.setText("접수번호 "+(position+1)+"번");
                 holder.tv_type.setText(order.getType());
-                holder.tv_time.setText(order.getTime());
+                holder.tv_time.setText(order.getTime().toString());
+                String request = order.getRequest();
+
                 holder.tv_request.setText(order.getRequest());
-                holder.recycle_item_order.setAdapter(new RecyclerViewAdapter_Order_Menus(order.getMenus(), mContext));
+
+                String menus = order.getMenus();
+                String arrayMenus[] = menus.split("&");
+                holder.recycle_item_order.setAdapter(new RecyclerViewAdapter_Order_Menus(arrayMenus, mContext));
                 holder.recycle_item_order.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
                 holder.recycle_item_order.setHasFixedSize(true);
             }
@@ -91,6 +96,11 @@ public class RecyclerViewAdapter_Order extends RecyclerView.Adapter<RecyclerView
     @Override
     public int getItemCount() {
         return (null != mList ? mList.size() : 0);
+    }
+
+    //부탁 split해서 출력하는 함수
+    private void splitRequest(){
+
     }
 
 }

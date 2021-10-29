@@ -58,6 +58,8 @@ public class OrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open);
         init();
+        getDataFromServer();
+        int i=1;
     }
 
     private void init() {
@@ -93,14 +95,6 @@ public class OrderActivity extends AppCompatActivity {
         recycle_open.setHasFixedSize(true);
         layoutManager = new GridLayoutManager(this,3);
         recycle_open.setLayoutManager(layoutManager);
-        //임시
-        ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("초코김밥:3");
-        arrayList.add("딸기김밥:1");
-        arrayList.add("바나나김밥:20");
-        for(int i=0;i<20;i++){
-            arr.add(new Order("포장","2021년 10월 23일 07:23","맵지 않게 부탁드려요",arrayList));
-        }
         adapter = new RecyclerViewAdapter_Order(arr, getApplicationContext());
         recycle_open.setAdapter(adapter);
     }
@@ -114,20 +108,20 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
                 Log.d("파이어베이스", "파이어베이스 연동 성공");
-                mycategory = (String) datasnapshot.getValue();
-                mDatabaseRef.child("Store").child(mycategory).child(firebaseUser.getUid()).child("Orderlist").addListenerForSingleValueEvent(new ValueEventListener() {
+                mycategory =datasnapshot.getValue(String.class);
+                mDatabaseRef.child("Store").child(mycategory).child(firebaseUser.getUid()).child("OrderList").child("조리전").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot datasnapshot) {
-                        for (DataSnapshot snapshot : datasnapshot.getChildren()) { ;
-                            Order order = snapshot.getValue(Order.class);
-                            arr.add(order);
+                        for (DataSnapshot snapshot : datasnapshot.getChildren()) {
+                            Order order1 = snapshot.getValue(Order.class);
+                            arr.add(order1);
                         }
                         adapter.notifyDataSetChanged();
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
+                        Log.d("파이어베이스", "실패2");
                     }
                 });
             }

@@ -16,13 +16,13 @@ import com.voda.voda_admin.R;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter_Order_Menus extends RecyclerView.Adapter<RecyclerViewAdapter_Order_Menus.MyViewHolder> {
-    private ArrayList<String> mList;
+    private String[] mList;
     private LayoutInflater mInflater;
     private Context mContext;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tv_name,tv_num;
+        private TextView tv_name, tv_num;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -31,7 +31,7 @@ public class RecyclerViewAdapter_Order_Menus extends RecyclerView.Adapter<Recycl
         }
     }
 
-    public RecyclerViewAdapter_Order_Menus(ArrayList<String> list, Context context) {
+    public RecyclerViewAdapter_Order_Menus(String[] list, Context context) {
         this.mList = list;
         this.mInflater = LayoutInflater.from(context);
         this.mContext = context;
@@ -41,27 +41,25 @@ public class RecyclerViewAdapter_Order_Menus extends RecyclerView.Adapter<Recycl
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = mInflater.inflate(R.layout.item_order_menus,parent,false);
+        View view = mInflater.inflate(R.layout.item_order_menus, parent, false);
         MyViewHolder myViewHolder = new MyViewHolder(view);
         return myViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        if (!mList.isEmpty()){
-            String menu = mList.get(position);
-            if(menu!=null){
-                //임시
-                String[] temp = menu.split(":",2);
-                holder.tv_name.setText(temp[0]);
-                holder.tv_num.setText(temp[1]);
-            }
+        String menu = mList[position];
+        if (menu != null) {
+            //임시
+            String[] temp = menu.split(":", 2);
+            holder.tv_name.setText(temp[0]);
+            holder.tv_num.setText(temp[1]);
         }
     }
 
     @Override
     public int getItemCount() {
-        return (null != mList ? mList.size() : 0);
+        return (null != mList ? mList.length : 0);
     }
 
 }

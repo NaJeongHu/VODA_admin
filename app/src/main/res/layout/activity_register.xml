@@ -92,6 +92,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_businessnum"/>
 
+    <ImageView
+        android:id="@+id/iv_picture"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:hint="카테고리"
+        android:src="@drawable/icon_acount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_category"/>
+
     <Button
         android:id="@+id/btn_register"
         android:layout_width="match_parent"

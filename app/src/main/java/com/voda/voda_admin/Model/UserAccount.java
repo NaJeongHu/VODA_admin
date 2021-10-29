@@ -12,6 +12,7 @@ public class UserAccount {
     private String storeaddress;
     private String businessnum;
     private String category;
+    private String imageurl;
 
     public UserAccount() { }
 
@@ -81,5 +82,13 @@ public class UserAccount {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getImageurl() {
+        return imageurl;
+    }
+
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 }

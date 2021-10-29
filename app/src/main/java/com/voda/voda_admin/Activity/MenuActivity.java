@@ -89,7 +89,7 @@ public class MenuActivity extends AppCompatActivity {
     private void init() {
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("voda_handy");
-        storageReference = FirebaseStorage.getInstance().getReference("handy_profiles");
+        storageReference = FirebaseStorage.getInstance().getReference("admin_menu_pictures");
         firebaseUser = mFirebaseAuth.getCurrentUser();
 
         recycle_menu = findViewById(R.id.recycle_menu);
@@ -122,6 +122,7 @@ public class MenuActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot datasnapshot) {
                         for (DataSnapshot snapshot : datasnapshot.getChildren()) {
+                            Log.d("파이어베이스", "파이어베이스 연동 성공3");
                             Menu menu1 = snapshot.getValue(Menu.class);
                             arr.add(menu1);
                         }
