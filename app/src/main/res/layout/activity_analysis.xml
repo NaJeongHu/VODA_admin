@@ -29,6 +29,7 @@
                 <TextView
                     android:textSize="30dp"
                     android:gravity="center"
+                    android:fontFamily="@font/nanum2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="주문통계"/>
@@ -42,13 +43,57 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:layout_below="@+id/appbar">
+        android:layout_below="@+id/appbar"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum1"
+                    android:text="월별 메뉴 그래프"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/tab1_chart_1"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
+                    android:layout_marginLeft="100dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum1"
+                    android:text="일별 매출 그래프"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/tab1_chart_2"
+                    android:layout_width="750dp"
+                    android:layout_height="400dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

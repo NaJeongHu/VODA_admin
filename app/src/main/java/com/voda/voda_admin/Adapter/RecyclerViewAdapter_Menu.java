@@ -28,7 +28,7 @@ public class RecyclerViewAdapter_Menu extends RecyclerView.Adapter<RecyclerViewA
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tv_category,tv_name,tv_tag,tv_explanation,tv_price;
-        private ImageView iv_picture,iv_settings;
+        private ImageView iv_picture;
         private Switch switch_sold_out;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -39,7 +39,6 @@ public class RecyclerViewAdapter_Menu extends RecyclerView.Adapter<RecyclerViewA
             this.tv_explanation = itemView.findViewById(R.id.item_menu_explanation);
             this.tv_price = itemView.findViewById(R.id.item_menu_price);
             this.iv_picture = itemView.findViewById(R.id.item_menu_picture);
-            this.iv_settings = itemView.findViewById(R.id.item_menu_settings);
             this.switch_sold_out = itemView.findViewById(R.id.item_menu_soldout);
 
             this.switch_sold_out.setOnClickListener(new View.OnClickListener() {
@@ -49,12 +48,6 @@ public class RecyclerViewAdapter_Menu extends RecyclerView.Adapter<RecyclerViewA
                 }
             });
 
-            this.iv_settings.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
         }
     }
 

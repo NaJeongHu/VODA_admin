@@ -10,12 +10,13 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.voda.voda_admin.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    CardView card_open,card_menu,card_customer,card_analysis,card_settings;
+    ConstraintLayout card_open,card_menu,card_customer,card_analysis,card_settings;
     ImageView iv_private;
 
     @Override

@@ -31,6 +31,7 @@
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum2"
                     android:text="영업개시"/>
 
             </LinearLayout>

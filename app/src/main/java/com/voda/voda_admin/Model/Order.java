@@ -6,9 +6,16 @@ public class Order {
     //TODO Order 객체 child 선언
 
     private String type;
-    private Long time;
+    private String time;
     private String request;
     private String menus;
+
+    public Order(String type, String time, String request, String menus) {
+        this.type = type;
+        this.time = time;
+        this.request = request;
+        this.menus = menus;
+    }
 
     public String getType() {
         return type;
@@ -18,11 +25,11 @@ public class Order {
         this.type = type;
     }
 
-    public Long getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Long time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

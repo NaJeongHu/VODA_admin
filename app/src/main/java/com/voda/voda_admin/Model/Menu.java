@@ -11,6 +11,15 @@ public class Menu {
 
     public Menu(){ }
 
+    public Menu(String name, String category, String explanation, String tag, Integer price, String imageurl) {
+        this.name = name;
+        this.category = category;
+        this.explanation = explanation;
+        this.tag = tag;
+        this.price = price;
+        this.imageurl = imageurl;
+    }
+
     public String getName() { return name; }
 
     public void setName(String name) { this.name = name; }

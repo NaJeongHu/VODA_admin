@@ -58,15 +58,29 @@ public class OrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open);
         init();
-        getDataFromServer();
+//        getDataFromServer();
         int i=1;
     }
 
     private void init() {
         //파이어베이스
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("voda_handy");
-        firebaseUser = mFirebaseAuth.getCurrentUser();
+//        mFirebaseAuth = FirebaseAuth.getInstance();
+//        mDatabaseRef = FirebaseDatabase.getInstance().getReference("voda_handy");
+//        firebaseUser = mFirebaseAuth.getCurrentUser();
+
+        //arr 임의로 작성
+        Order order1 = new Order("매장식사","2021-12-14 13:56:50","뜨겁지 않게 해주세요","제육 김밥:2&민트초코 김밥:1&파인애플 김밥:4");
+        Order order2 = new Order("매장식사","2021-12-14 14:23:20","갑각류는 까주세요","딸기 김밥:2&파인애플 김밥:1");
+        Order order3 = new Order("매장식사","2021-12-14 14:56:52","보온팩에 넣어주세요","제육 김밥:2");
+        Order order4 = new Order("매장식사","2021-12-14 15:11:12","뜨겁지 않게 해주세요","칵테일:2&민트초코 김밥:1&파인애플 김밥:4");
+        Order order5 = new Order("매장식사","2021-12-14 15:24:14","","제육 김밥:2&누드 김밥:10");
+        Order order6 = new Order("매장식사","2021-12-14 15:27:00","뜨겁지 않게 해주세요","제육 김밥:2&민트초코 김밥:1&파인애플 김밥:4");
+        arr.add(order1);
+        arr.add(order2);
+        arr.add(order3);
+        arr.add(order4);
+        arr.add(order5);
+        arr.add(order6);
 
         //스피너
         sp_order = findViewById(R.id.sp_order);

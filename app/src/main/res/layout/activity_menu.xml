@@ -43,6 +43,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:background="@null"
+                android:fontFamily="@font/nanum2"
                 android:hint="메뉴명/카테고리"
                 android:maxLines="1">
 
@@ -63,7 +64,9 @@
             android:id="@+id/btn_menu_plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:text="메뉴 등록"
+            android:fontFamily="@font/nanum2"
             android:textSize="20dp"
             android:layout_marginRight="20dp"/>
 
@@ -71,7 +74,9 @@
             android:id="@+id/btn_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="카테고리 관리"
+            android:text="메뉴 관리"
+            android:backgroundTint="@color/orange"
+            android:fontFamily="@font/nanum2"
             android:textSize="20dp"/>
 
     </LinearLayout>
